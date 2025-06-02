@@ -22,7 +22,7 @@ ENV SUITE=${SUITE}
 
 RUN dnf install -y rpm-build dnf-plugins-core epel-release
 RUN dnf config-manager --set-enabled epel
-RUN dnf config-manager --set-enabled crb
+RUN dnf config-manager --set-enabled powertools
 
 COPY --link SPECS /root/rpmbuild/SPECS
 RUN dnf builddep -y /root/rpmbuild/SPECS/*.spec
