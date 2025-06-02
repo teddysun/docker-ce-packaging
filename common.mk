@@ -20,7 +20,7 @@ DOCKER_GITCOMMIT:=abcdefg
 GO_VERSION:=1.24.3
 PLATFORM=Docker Engine - Community
 SHELL:=/bin/bash
-VERSION?=0.0.1-dev
+VERSION?=28.2.2
 
 # DOCKER_CLI_REPO and DOCKER_ENGINE_REPO define the source repositories to clone
 # the source from. These can be overridden to build from a fork.
@@ -36,7 +36,7 @@ DOCKER_MODEL_REPO   ?= https://github.com/docker/model-cli.git
 # tagged a release with the same version.
 #
 # For other situations, specify DOCKER_CLI_REF and/or DOCKER_ENGINE_REF separately.
-REF                ?= HEAD
+REF                ?= v28.2.2
 DOCKER_CLI_REF     ?= $(REF)
 DOCKER_ENGINE_REF  ?= $(REF)
 # DOCKER_COMPOSE_REF is the version of compose to package. It usually is a tag,
@@ -47,7 +47,7 @@ DOCKER_COMPOSE_REF ?= v2.36.2
 DOCKER_BUILDX_REF  ?= v0.24.0
 # DOCKER_MODEL_REF is the version of model to package. It is usually a tag,
 # but can be a valid git reference in DOCKER_MODEL_REPO.
-DOCKER_MODEL_REF   ?= v0.1.24
+DOCKER_MODEL_REF   ?= v0.1.25
 
 # Use "stage" to install dependencies from download-stage.docker.com during the
 # verify step. Leave empty or use any other value to install from download.docker.com
