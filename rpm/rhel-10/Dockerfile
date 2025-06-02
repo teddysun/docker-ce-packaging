@@ -2,7 +2,7 @@
 
 ARG GO_IMAGE=golang:latest
 ARG DISTRO=almalinux
-ARG SUITE=8
+ARG SUITE=10
 ARG BUILD_IMAGE=${DISTRO}:${SUITE}
 
 FROM ${GO_IMAGE} AS golang

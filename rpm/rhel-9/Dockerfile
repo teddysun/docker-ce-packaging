@@ -1,30 +1,13 @@
 # syntax=docker/dockerfile:1
 
 ARG GO_IMAGE=golang:latest
-ARG DISTRO=rhel
+ARG DISTRO=almalinux
 ARG SUITE=9
-ARG BUILD_IMAGE=registry.access.redhat.com/ubi9/ubi
+ARG BUILD_IMAGE=${DISTRO}:${SUITE}
 
 FROM ${GO_IMAGE} AS golang
 
-FROM ${BUILD_IMAGE} AS subscribed-image
-RUN --mount=type=secret,id=rh-user --mount=type=secret,id=rh-pass <<-EOT
-	rm -f /etc/rhsm-host
-
-	if [ ! -f /run/secrets/rh-user ] || [ ! -f /run/secrets/rh-pass ]; then
-		echo "Either RH_USER or RH_PASS is not set. Running build without subscription."
-	else
-		subscription-manager register \
-			--username="$(cat /run/secrets/rh-user)" \
-			--password="$(cat /run/secrets/rh-pass)"
-
-		subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
-		# dnf config-manager --set-enabled codeready-builder-for-rhel-9-$(arch)-rpms
-	fi
-EOT
-
-FROM subscribed-image
-
+FROM ${BUILD_IMAGE}
 ENV GOPROXY=https://proxy.golang.org|direct
 ENV GO111MODULE=off
 ENV GOPATH=/go
@@ -37,7 +20,10 @@ ARG SUITE
 ENV DISTRO=${DISTRO}
 ENV SUITE=${SUITE}
 
-RUN dnf install -y rpm-build
+RUN dnf install -y rpm-build dnf-plugins-core epel-release
+RUN dnf config-manager --set-enabled epel
+RUN dnf config-manager --set-enabled crb
+
 COPY --link SPECS /root/rpmbuild/SPECS
 RUN dnf builddep -y /root/rpmbuild/SPECS/*.spec
 COPY --link --from=golang /usr/local/go /usr/local/go
