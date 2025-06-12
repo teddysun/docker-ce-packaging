@@ -57,6 +57,7 @@ RUN_FLAGS=
 RUN?=docker run --rm \
 	--security-opt seccomp=unconfined \
 	--platform linux/$(ARCH) \
+	-h buildbot \
 	-e PLATFORM \
 	-v $(CURDIR)/rpmbuild/SOURCES:/root/rpmbuild/SOURCES:ro \
 	-v $(CURDIR)/rpmbuild/$@/RPMS:/root/rpmbuild/RPMS \
