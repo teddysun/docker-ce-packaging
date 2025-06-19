@@ -10,7 +10,7 @@ License: Apache-2.0
 Source0: cli.tgz
 URL: https://www.docker.com
 Vendor: Docker
-Packager: Docker <support@docker.com>
+Packager: Teddysun <i@teddysun.com>
 
 # required packages on install
 Requires: /bin/sh

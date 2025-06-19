@@ -10,7 +10,7 @@ Group: Tools/Docker
 License: Apache-2.0
 URL: https://www.docker.com
 Vendor: Docker
-Packager: Docker <support@docker.com>
+Packager: Teddysun <i@teddysun.com>
 
 Requires: /usr/sbin/groupadd
 # Provides modprobe, which we use to load br_netfilter if not loaded.

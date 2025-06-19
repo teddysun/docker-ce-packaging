@@ -10,7 +10,7 @@ Group: Tools/Docker
 License: Apache-2.0
 URL: https://github.com/docker/compose/
 Vendor: Docker
-Packager: Docker <support@docker.com>
+Packager: Teddysun <i@teddysun.com>
 
 Enhances: docker-ce-cli
 Recommends: docker-buildx-plugin

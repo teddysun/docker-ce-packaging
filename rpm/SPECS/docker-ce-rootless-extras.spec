@@ -10,7 +10,7 @@ Group: Tools/Docker
 License: Apache-2.0
 URL: https://docs.docker.com/engine/security/rootless/
 Vendor: Docker
-Packager: Docker <support@docker.com>
+Packager: Teddysun <i@teddysun.com>
 
 Requires: docker-ce
 # TODO: conditionally add `Requires: dbus-daemon` for Fedora and CentOS 8

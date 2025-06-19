@@ -10,7 +10,7 @@ Group: Tools/Docker
 License: Apache-2.0
 URL: https://docs.docker.com/model-runner/
 Vendor: Docker
-Packager: Docker <support@docker.com>
+Packager: Teddysun <i@teddysun.com>
 
 Enhances: docker-ce-cli
 
