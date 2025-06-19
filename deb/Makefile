@@ -36,6 +36,7 @@ RUN_FLAGS=
 RUN?=docker run --rm \
 	--security-opt seccomp=unconfined \
 	--platform linux/$(ARCH) \
+	-h buildbot \
 	-e PLATFORM \
 	-e EPOCH='$(EPOCH)' \
 	-e DEB_VERSION=$(word 1, $(GEN_DEB_VER)) \
