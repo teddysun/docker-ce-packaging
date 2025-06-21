@@ -8,14 +8,15 @@ def pkgs = [
     [target: "debian-bullseye",          image: "debian:bullseye",                        arches: ["amd64", "aarch64", "armhf"]], // Debian 11 (oldstable, EOL: 2024-08-14, EOL (LTS): 2026-08-31)
     [target: "debian-bookworm",          image: "debian:bookworm",                        arches: ["amd64", "aarch64", "armhf"]], // Debian 12 (stable, EOL: 2026-06-10, EOL (LTS): 2028-06-30)
     [target: "debian-trixie",            image: "debian:trixie",                          arches: ["amd64", "aarch64", "armhf"]], // Debian 13 (testing)
+    [target: "rhel-8",                   image: "almalinux:8",                            arches: ["amd64", "aarch64"]],          // EOL: 31 May, 2029
+    [target: "rhel-9",                   image: "almalinux:9",                            arches: ["amd64", "aarch64"]],          // EOL: 31 May, 2032
+    [target: "rhel-10",                  image: "almalinux:10",                           arches: ["amd64", "aarch64"]],          // EOL: 31 May, 2035
     [target: "fedora-41",                image: "fedora:41",                              arches: ["amd64", "aarch64"]],          // EOL: November 19, 2025
     [target: "fedora-42",                image: "fedora:42",                              arches: ["amd64", "aarch64"]],          // EOL: May 13, 2026
     [target: "raspbian-bullseye",        image: "balenalib/rpi-raspbian:bullseye",        arches: ["armhf"]],                     // Debian/Raspbian 11 (stable)
     [target: "raspbian-bookworm",        image: "balenalib/rpi-raspbian:bookworm",        arches: ["armhf"]],                     // Debian/Raspbian 12 (next stable)
     [target: "ubuntu-jammy",             image: "ubuntu:jammy",                           arches: ["amd64", "aarch64", "armhf"]], // Ubuntu 22.04 LTS (End of support: June,  2027. EOL: April, 2032)
     [target: "ubuntu-noble",             image: "ubuntu:noble",                           arches: ["amd64", "aarch64", "armhf"]], // Ubuntu 24.04 LTS (End of support: June,  2029. EOL: April, 2034)
-    [target: "ubuntu-oracular",          image: "ubuntu:oracular",                        arches: ["amd64", "aarch64", "armhf"]], // Ubuntu 24.10 (EOL: July, 2025)
-    [target: "ubuntu-plucky",            image: "ubuntu:plucky",                          arches: ["amd64", "aarch64", "armhf"]], // Ubuntu 25.04 (EOL: January, 2026)
 ]
 
 def genBuildStep(LinkedHashMap pkg, String arch) {
