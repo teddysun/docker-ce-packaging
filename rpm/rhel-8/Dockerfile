@@ -14,7 +14,7 @@ ENV GOPATH=/go
 ENV GOTOOLCHAIN=local
 ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 ENV AUTO_GOPATH=1
-ENV DOCKER_BUILDTAGS=exclude_graphdriver_btrfs
+ENV DOCKER_BUILDTAGS="exclude_graphdriver_btrfs no_libnftables"
 ARG DISTRO
 ARG SUITE
 ENV DISTRO=${DISTRO}
@@ -25,7 +25,7 @@ RUN dnf config-manager --set-enabled epel
 RUN dnf config-manager --set-enabled powertools
 
 COPY --link SPECS /root/rpmbuild/SPECS
-RUN dnf builddep -y /root/rpmbuild/SPECS/*.spec
+RUN dnf builddep --define '_no_libnftables true' -y /root/rpmbuild/SPECS/*.spec
 COPY --link --from=golang /usr/local/go /usr/local/go
 WORKDIR /root/rpmbuild
 ENTRYPOINT ["/bin/rpmbuild"]
