@@ -17,7 +17,7 @@ CHOWN:=docker run --rm -v $(CURDIR):/v -w /v alpine chown
 DEFAULT_PRODUCT_LICENSE:=Community Engine
 PACKAGER_NAME?=
 DOCKER_GITCOMMIT:=abcdefg
-GO_VERSION:=1.25.4
+GO_VERSION:=1.25.5
 PLATFORM=Docker Engine - Community
 SHELL:=/bin/bash
 VERSION?=29.1.2
@@ -47,8 +47,8 @@ DOCKER_COMPOSE_REF ?= v5.0.0
 DOCKER_BUILDX_REF  ?= v0.30.1
 # DOCKER_MODEL_REF is the version of model to package. It is usually a tag,
 # but can be a valid git reference in DOCKER_MODEL_REPO.
-DOCKER_MODEL_REF   ?= cmd/cli/v1.0.2
-DOCKER_MODEL_VER   ?= v1.0.2
+DOCKER_MODEL_REF   ?= cmd/cli/v1.0.3
+DOCKER_MODEL_VER   ?= v1.0.3
 
 # Use "stage" to install dependencies from download-stage.docker.com during the
 # verify step. Leave empty or use any other value to install from download.docker.com
