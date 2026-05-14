@@ -17,7 +17,7 @@ CHOWN:=docker run --rm -v $(CURDIR):/v -w /v alpine chown
 DEFAULT_PRODUCT_LICENSE:=Community Engine
 PACKAGER_NAME?=
 DOCKER_GITCOMMIT:=abcdefg
-GO_VERSION:=1.26.2
+GO_VERSION:=1.26.3
 PLATFORM=Docker Engine - Community
 SHELL:=/bin/bash
 VERSION?=29.4.3
@@ -44,7 +44,7 @@ DOCKER_ENGINE_REF  ?= $(REF)
 DOCKER_COMPOSE_REF ?= v5.1.3
 # DOCKER_BUILDX_REF is the version of compose to package. It usually is a tag,
 # but can be a valid git reference in DOCKER_BUILDX_REPO.
-DOCKER_BUILDX_REF  ?= v0.33.0
+DOCKER_BUILDX_REF  ?= v0.34.0
 # DOCKER_MODEL_REF is the version of model to package. It is usually a tag,
 # but can be a valid git reference in DOCKER_MODEL_REPO.
 DOCKER_MODEL_REF   ?= v1.1.39
