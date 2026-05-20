@@ -44,7 +44,7 @@ DOCKER_ENGINE_REF  ?= $(REF)
 DOCKER_COMPOSE_REF ?= v5.1.3
 # DOCKER_BUILDX_REF is the version of compose to package. It usually is a tag,
 # but can be a valid git reference in DOCKER_BUILDX_REPO.
-DOCKER_BUILDX_REF  ?= v0.34.0
+DOCKER_BUILDX_REF  ?= v0.34.1
 # DOCKER_MODEL_REF is the version of model to package. It is usually a tag,
 # but can be a valid git reference in DOCKER_MODEL_REPO.
 DOCKER_MODEL_REF   ?= v1.1.39
