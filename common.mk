@@ -20,7 +20,7 @@ DOCKER_GITCOMMIT:=abcdefg
 GO_VERSION:=1.26.3
 PLATFORM=Docker Engine - Community
 SHELL:=/bin/bash
-VERSION?=29.5.1
+VERSION?=29.5.2
 
 # DOCKER_CLI_REPO and DOCKER_ENGINE_REPO define the source repositories to clone
 # the source from. These can be overridden to build from a fork.
@@ -36,12 +36,12 @@ DOCKER_MODEL_REPO   ?= https://github.com/docker/model-runner.git
 # tagged a release with the same version.
 #
 # For other situations, specify DOCKER_CLI_REF and/or DOCKER_ENGINE_REF separately.
-REF                ?= docker-v29.5.1
-DOCKER_CLI_REF     ?= v29.5.1
+REF                ?= docker-v29.5.2
+DOCKER_CLI_REF     ?= v29.5.2
 DOCKER_ENGINE_REF  ?= $(REF)
 # DOCKER_COMPOSE_REF is the version of compose to package. It usually is a tag,
 # but can be a valid git reference in DOCKER_COMPOSE_REPO.
-DOCKER_COMPOSE_REF ?= v5.1.3
+DOCKER_COMPOSE_REF ?= v5.1.4
 # DOCKER_BUILDX_REF is the version of compose to package. It usually is a tag,
 # but can be a valid git reference in DOCKER_BUILDX_REPO.
 DOCKER_BUILDX_REF  ?= v0.34.1
